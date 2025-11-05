@@ -1,0 +1,29 @@
+POST http://127.0.0.1:3000/api/events
+Content-Type: application/json
+
+{
+    "name": "Alberto",
+    "description": "Algum outro evento aconteceu essa semana",
+    "price": 1994,
+    "image": "https://pt.wikipedia.org/wiki/Angola#/media/Ficheiro:Flag_of_Angola.svg"
+}
+
+###
+GET http://127.0.0.1:3000/api/events
+
+###
+GET http://127.0.0.1:3000/api/events/690ba0d9e17107c2aa04644c
+
+###
+DELETE  http://127.0.0.1:3000/api/events/690b9ff1e17107c2aa046448
+
+###
+PUT http://127.0.0.1:3000/api/events/69076d259b71163697009ca8
+Content-Type: application/json
+
+{
+    "name": "Ultimo dado",
+    "description": "Algum outro evento aconteceu essa semana",
+    "price": 12281994,
+    "image": "https://pt.wikipedia.org/wiki/Angola#/media/Ficheiro:Flag_of_Angola.svg"
+}
