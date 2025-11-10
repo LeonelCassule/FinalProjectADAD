@@ -5,12 +5,19 @@ const eventsController = {
     create: async(req, res)=> {
         try{
             const events = {
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                image: req.body.image,
+                
+                TituloPortugal: req.body.TituloPortugal,
+                TituloOriginal: req.body.TituloOriginal,
+                Licenciador: req.body.Licenciador,
+                NumeroRegisto: req.body.NumeroRegisto,
+                DataAutenticacao: req.body.DataAutenticacao,
+                Tipo:req. body.Tipo,
+                Classificacao: req.body.Classificacao,
+                Distribuidor: req.body.Distribuidor,
+            
+                 
             };
-
+            
             const response = await EventsModel.create(events);
             res.status(201).json({response, msg:"Evento criado com sucesso!"});
 
@@ -21,11 +28,16 @@ const eventsController = {
 
     getAll: async(req, res) =>{
         try{
-           // const events = await EventsModel.find();
+           //Paginacao
+           const page = req.query.p || 0;
+           const eventsPerPage = 10;
+           const events = await EventsModel.find()
+           .skip(page*eventsPerPage)
+           .limit(eventsPerPage);
 
-          const alunosCollection = mongoose.connection.db.collection('eventsalunos');
+            // const events = await EventsModel.find()
 
-            res.json(events);
+           res.json(events);
         }catch(error){
             console.log(error);
         }
@@ -71,10 +83,15 @@ const eventsController = {
     const id = req.params.id;
 
     const events = {
-        name: req.body.name,
-        description: req.body.description,
-        price: req.body.price,
-        image: req.body.image
+        TituloPortugal: req.body.TituloPortugal,
+        TituloOriginal: req.body.TituloOriginal,
+        Licenciador: req.body.Licenciador,
+        NumeroRegisto: req.body.NumeroRegisto,
+        DataAutenticacao:req.body.DataAutenticacao,
+        Tipo:req.body.Tipo,
+        Classificacao:req.body.Classificacao,
+        Distribuidor:req.body.Distribuidor
+            
     };
 
     const updateEvents = await EventsModel.findByIdAndUpdate(id,events);

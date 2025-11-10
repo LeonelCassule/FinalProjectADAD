@@ -2,17 +2,22 @@ POST http://127.0.0.1:3000/api/events
 Content-Type: application/json
 
 {
-    "name": "Alberto",
-    "description": "Algum outro evento aconteceu essa semana",
-    "price": 1994,
-    "image": "https://pt.wikipedia.org/wiki/Angola#/media/Ficheiro:Flag_of_Angola.svg"
+   "TituloPortugal": "a vida em angola",
+   "TituloOriginal": "angola é um mambo",
+   "Licenciador": "MIT",
+   "NumeroRegisto": "1234/d-12",
+   "DataAutenticacao":"2025",
+   "Tipo":"comedia",
+   "Classificacao":"qualquer idade",
+   "Distribuidor":"brigadeiro 10 pacote"
+
 }
 
 ###
 GET http://127.0.0.1:3000/api/events
 
 ###
-GET http://127.0.0.1:3000/api/events/690ba0d9e17107c2aa04644c
+GET http://127.0.0.1:3000/api/events/6910e6cc84f70e281c6df7aa
 
 ###
 DELETE  http://127.0.0.1:3000/api/events/690b9ff1e17107c2aa046448
@@ -22,8 +27,51 @@ PUT http://127.0.0.1:3000/api/events/69076d259b71163697009ca8
 Content-Type: application/json
 
 {
-    "name": "Ultimo dado",
-    "description": "Algum outro evento aconteceu essa semana",
-    "price": 12281994,
-    "image": "https://pt.wikipedia.org/wiki/Angola#/media/Ficheiro:Flag_of_Angola.svg"
+
+        "TituloPortugal": "o sopro da vida",
+        "TituloOriginal": "txe tudo rápido",
+        "Licenciador": "MIT",
+        "NumeroRegisto": "1234/d-12",
+        "DataAutenticacao":2030,
+        "Tipo":"comedia",
+        "Classificacao":"qualquer idade",
+        "Distribuidor":"brigadeiro 10 pacote"
+
+}
+
+
+// Parte dos Usauarios
+
+###
+POST  http://127.0.0.1:3000/api/users
+Content-Type: application/json
+
+  {
+   "name": "Francisco Joao",
+   "gender": "Male",
+   "age": 28,
+   "occupation": "Meo call center"
+  }
+
+###
+GET http://127.0.0.1:3000/api/users
+
+###
+GET http://127.0.0.1:3000/api/users/6911e574bab826d68a88078c
+
+
+###
+DELETE  http://127.0.0.1:3000/api/users/6911e574bab826d68a88078c
+
+
+###
+PUT http://127.0.0.1:3000/api/users/6911e574bab826d68a88078c
+
+Content-Type: application/json
+
+{  
+   "name": "Valdino Cassul",
+   "gender": "Male",
+   "age": 28,
+   "occupation": "Meo call center"
 }

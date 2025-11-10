@@ -2,10 +2,37 @@ const mongoose = require("mongoose");
 
 const {Schema} =  mongoose;
 
-const {serviceSchema} = require("./events");
+const {eventSchema} = require("./events");
 
-const usersSchema = new Schema({});
+const userSchema = new Schema({
+    name:{
+        type: String,
+        required: true
+    },
+    gender:{
+        type: String,
+        required: true
+    },
+    age:{
+        type: Number,
+        required: true
+    },
+    occupation:{
+        type: String,
+        required: true
+    },
 
-const Users = mongoose.model("User", usersSchema);
+   /* events: {
+        type: [eventSchema],
+    },*/
 
-module.exports = Users;
+}, {timestamps:true}
+
+);
+
+
+
+const Users = mongoose.model("users", userSchema);
+
+
+module.exports = Users; 

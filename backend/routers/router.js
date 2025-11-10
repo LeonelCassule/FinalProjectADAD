@@ -8,7 +8,8 @@ router.use("/", eventsRouter);
 
 // Users router
 
-const userRouter = require("./users");
-router.use("/",userRouter);
+const usersRouter = require("./users");
+
+router.use("/", usersRouter);
 
 module.exports = router;
